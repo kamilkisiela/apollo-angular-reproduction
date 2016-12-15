@@ -1,0 +1,46 @@
+{
+  "name": "angular2-apollo-reproduction",
+  "private": true,
+  "repository": {
+    "url": "kamilkisiela/angular2-apollo-reproduction",
+    "type": "git"
+  },
+  "author": "Kamil Kisiela <kamil.kisiela@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon dist/server/index.js",
+    "prestart": "npm run build",
+    "prebuild": "npm run clear",
+    "clear": "rimraf dist/",
+    "build": "tsc",
+    "postbuild": "npm run bundle",
+    "bundle": "webpack"
+  },
+  "devDependencies": {
+    "@types/body-parser": "0.0.33",
+    "body-parser": "~1.15.2",
+    "express": "^4.14.0",
+    "graphql": "^0.7.2",
+    "graphql-server-express": "^0.4.3",
+    "graphql-subscriptions": "^0.2.2",
+    "graphql-tools": "^0.8.4",
+    "nodemon": "~1.11.0",
+    "rimraf": "^2.5.4",
+    "typescript": "~2.0.10",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "@angular/common": "^2.3.1",
+    "@angular/compiler": "^2.3.1",
+    "@angular/core": "^2.3.1",
+    "@angular/http": "^2.3.1",
+    "@angular/platform-browser": "^2.3.1",
+    "@angular/platform-browser-dynamic": "^2.3.1",
+    "angular2-apollo": "^0.8.0",
+    "apollo-client": "^0.5.20",
+    "core-js": "^2.4.1",
+    "graphql-tag": "^1.1.2",
+    "rxjs": "^5.0.0-rc.4",
+    "zone.js": "^0.7.2"
+  }
+}
