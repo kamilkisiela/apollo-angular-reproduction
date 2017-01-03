@@ -5,6 +5,10 @@ const networkInterface = createBatchingNetworkInterface({
   batchInterval: 10
 });
 
-export const client = new ApolloClient({
+const client = new ApolloClient({
   networkInterface
 });
+
+export function provideClient(): ApolloClient {
+  return client;
+}
