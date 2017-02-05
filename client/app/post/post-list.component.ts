@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Angular2Apollo, ApolloQueryObservable } from 'angular2-apollo';
+import { Apollo, ApolloQueryObservable } from 'apollo-angular';
 import { ApolloQueryResult } from 'apollo-client';
 
 import gql from 'graphql-tag';
@@ -17,10 +17,10 @@ import gql from 'graphql-tag';
   `
 })
 export class PostListComponent implements OnInit {
-  posts: ApolloQueryObservable<ApolloQueryResult>;
+  posts: ApolloQueryObservable<ApolloQueryResult<any>>;
   
   constructor(
-    private apollo: Angular2Apollo
+    private apollo: Apollo
   ) {}
 
   ngOnInit() {

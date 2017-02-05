@@ -1,5 +1,3 @@
-import { find, filter } from 'lodash';
-
 const authors = [
   { id: 1, firstName: 'Tom', lastName: 'Coleman' },
   { id: 2, firstName: 'Sashko', lastName: 'Stubailo' },
@@ -19,7 +17,7 @@ const resolveFunctions = {
   },
   Mutation: {
     upvotePost(_, { postId }) {
-      const post = find(posts, { id: postId });
+      const post = posts.find(({id}) => id === postId);
       
       if (!post) {
         throw new Error(`Couldn't find post with id ${postId}`);
@@ -31,12 +29,12 @@ const resolveFunctions = {
   },
   Author: {
     posts(author) {
-      return filter(posts, { authorId: author.id });
+      return posts.filter(({authorId}) => authorId === author.id);
     },
   },
   Post: {
     author(post) {
-      return find(authors, { id: post.authorId });
+      return authors.find(({id}) => id === post.authorId);
     },
   },
 };

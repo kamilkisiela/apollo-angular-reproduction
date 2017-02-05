@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Angular2Apollo } from 'angular2-apollo';
+import { Apollo } from 'apollo-angular';
 
 import gql from 'graphql-tag';
 
@@ -17,7 +17,7 @@ export class PostUpvoterComponent {
   @Input() postId: number;
 
   constructor(
-    private apollo: Angular2Apollo
+    private apollo: Apollo
   ) {}
 
   upvote() {
