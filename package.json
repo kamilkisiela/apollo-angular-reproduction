@@ -14,7 +14,8 @@
     "clear": "rimraf dist/",
     "build": "tsc",
     "postbuild": "npm run bundle",
-    "bundle": "webpack"
+    "bundle": "webpack",
+    "test": "npm run build"
   },
   "devDependencies": {
     "@types/body-parser": "0.0.33",
