@@ -17,7 +17,7 @@ import gql from 'graphql-tag';
   `
 })
 export class PostListComponent implements OnInit {
-  posts: ApolloQueryObservable<ApolloQueryResult<any>>;
+  posts: ApolloQueryObservable<any>;
   
   constructor(
     private apollo: Apollo
