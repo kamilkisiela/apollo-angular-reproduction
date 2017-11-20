@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let post of posts | async; let i = index" [attr.data-test-post]="i">
+    {{post.title}} by {{post.author.firstName}} {{post.author.lastName}}
+    <span data-test="votes">({{post.votes}} votes)</span>
+    <app-upvoter [postId]="post.id"></app-upvoter>
+  </li>
+</ul>

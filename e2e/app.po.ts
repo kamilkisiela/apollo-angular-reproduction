@@ -5,7 +5,23 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getVotes() {
+    return element(by.css('[data-test-post="0"] [data-test="votes"]'))
+      .getText()
+      .then(text =>
+        parseInt(
+          text
+            .replace('(', '')
+            .replace(')', '')
+            .replace(' votes', ''),
+          0,
+        ),
+      );
+  }
+
+  upvote() {
+    return element(
+      by.css('[data-test-post="0"] [data-test="upvote-btn"]'),
+    ).click();
   }
 }
